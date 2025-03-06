@@ -1,0 +1,34 @@
+<!-- Fill the code for cart component --> 
+<div>
+<!--<ng-template *ngIf="cartList.length ==0">-->
+<ng-container *ngIf="cartList.length ==0">
+<div>
+    <p>Your cart is empty!</p>
+    <p>Add item to it now</p>
+    <button routerLink="/product" id="shopnow">Shop Now</button>
+</div>
+</ng-container>
+<!--</ng-template>-->
+
+<!--<ng-template *ngIf="cartList.length !=0">-->
+<ng-container *ngIf="cartList.length !=0">
+<form>
+<table>
+    <tr>
+        <td>Sr.No</td>
+        <td>Product Name</td>
+        <td>Price</td>
+    </tr>
+    <tr *ngFor = "let i of cartList; let j = index">
+        <td>{{j+1}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.price}}</td>
+    </tr>
+    <tr>
+        <td colspan="3">Grand Total : ${{grandTotal}}</td>
+    </tr>
+</table>
+</form>
+</ng-container>
+<!--</ng-template>-->
+</div>	 	  	  	 			  	   	 	

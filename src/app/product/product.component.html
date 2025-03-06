@@ -1,0 +1,43 @@
+<!--<div >-->
+<!--    <br><br>-->
+<!--    <div class="container d-flex justify-content-around flex-wrap">     -->
+        <!-- Fill the code for product component -->
+        <!-- Each item should wrapped inside a div tag with class="item"-->
+        
+        <!--<ng-template *ngFor="let i of productList">-->
+<!--        <ng-container *ngFor="let i of productList">-->
+<!--            <div class="item">-->
+<!--                <p><b>Title: {{i.title}}</b></p>-->
+<!--                <p>Price: ${{i.price}}</p>-->
+<!--                <p>Available Sizes:[{{i.availableSizes}}]</p>-->
+<!--                <button id=btn{{i.sku}} (click)=addtocart(i)>Add to cart</button>-->
+<!--            </div>-->
+        <!--</ng-template>-->
+<!--        </ng-container>-->
+           
+        
+<!--    </div>-->
+<!--</div>-->
+
+<div class="container py-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Fill the code for product component -->
+        <!-- Each item should be wrapped inside a div tag with class="col"-->
+        
+        <!-- <ng-template *ngFor="let i of productList"> -->
+        <ng-container *ngFor="let i of productList">
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Title: {{i.title}}</b></h5>
+                        <p class="card-text">Price: ${{i.price}}</p>
+                        <p class="card-text">Available Sizes: [{{i.availableSizes}}]</p>
+                        <button id="btn{{i.sku}}" class="btn btn-primary" (click)="addtocart(i)">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        <!-- </ng-template> -->
+        </ng-container>
+    </div>
+</div>
+	 	  	  		    	   	 	   	 	
