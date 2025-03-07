@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh '''
                     npm install @angular-devkit/build-angular --save-dev
-                    npm install typescript@4.7.4 --save-dev
+                    npm install typescript@5.4.3 --save-dev
                 '''
             }
         }
