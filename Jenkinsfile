@@ -37,8 +37,7 @@ pipeline {
         stage('Serve Application') {
             steps {
                 sh '''
-                    npm install  http-server --save-dev
-                    http-server dist/angular-app --port 8090 --host 0.0.0.0 --silent &
+                    sudo npm start --silent &
                 '''
             }
         }
