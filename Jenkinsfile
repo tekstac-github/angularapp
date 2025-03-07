@@ -17,14 +17,14 @@ pipeline {
             steps {
                 sh '''
                     npm install @angular-devkit/build-angular --save-dev
-                    npm install typescript@5.4.3 --save-dev
+                    npm install typescript@4.7.4 --save-dev
                 '''
             }
         }
 
         stage('Build AngularApp') {
             steps {
-                sh 'ng build --configuration production'
+                sh 'ng build --configuration production --output-path=dist/angular-app'
             }
         }
 
@@ -33,11 +33,20 @@ pipeline {
                 sh 'ng test --watch=false --browsers=ChromeHeadless'
             }
         }
+
+        stage('Serve Application') {
+            steps {
+                sh '''
+                    npm install -g http-server
+                    http-server dist/angular-app --port 8080 --silent &
+                '''
+            }
+        }
     }
 
     post {
         success {
-            echo 'Deployment successful!'
+            echo 'Application is running at http://localhost:8080'
         }
         failure {
             echo 'Build or deployment failed! Check logs.'
