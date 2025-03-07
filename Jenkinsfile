@@ -45,7 +45,7 @@ pipeline {
 
     post {
         success {
-            echo 'Application is running at http://localhost:8090'
+            echo 'Application is running at http://localhost:4200 or http://IP:4200 (for IP give Jenkins server IP)'
         }
         failure {
             echo 'Build or deployment failed! Check logs.'
