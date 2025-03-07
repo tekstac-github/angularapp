@@ -37,7 +37,7 @@ pipeline {
         stage('Serve Application') {
             steps {
                 sh '''
-                    sudo npm install -g http-server
+                    npm install  http-server --save-dev
                     http-server dist/angular-app --port 8090 --host 0.0.0.0 --silent &
                 '''
             }
@@ -46,7 +46,7 @@ pipeline {
 
     post {
         success {
-            echo 'Application is running at http://localhost:8080'
+            echo 'Application is running at http://localhost:8090'
         }
         failure {
             echo 'Build or deployment failed! Check logs.'
